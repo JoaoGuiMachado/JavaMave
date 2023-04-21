@@ -8,6 +8,8 @@ import me.dio.academia.digital.controller.Aluno;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 
+    Aluno save(me.dio.academia.digital.entity.Aluno aluno);
+
 
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
@@ -25,8 +26,13 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService{
     public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
        
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
+        alunoRepository.findById(form.getAlunoId()).get();
+
+        avaliacaoFisica.setAluno(aluno);
+        avaliacaoFisica.setPeso(form.getPeso());
+        avaliacaoFisica.setAltura(form.getAltura());
        
-        return null;
+        return avaliacaoFisicaRepository.save(avaliacaoFisica);
     }
 
     @Override
