@@ -27,7 +27,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService{
        
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
         alunoRepository.findById(form.getAlunoId()).get();
-
+        
         avaliacaoFisica.setAluno(aluno);
         avaliacaoFisica.setPeso(form.getPeso());
         avaliacaoFisica.setAltura(form.getAltura());

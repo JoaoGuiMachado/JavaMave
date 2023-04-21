@@ -12,7 +12,7 @@ public interface IAlunoService {
    * @param form - formulário referente aos dados para criação de um Aluno no banco de dados.
    * @return - Aluno recém-criado.
    */
-  me.dio.academia.digital.controller.Aluno create(AlunoForm form);
+  me.dio.academia.digital.entity.Aluno create(AlunoForm form);
 
   /**
    * Retorna um Aluno que está no banco de dados de acordo com seu Id.

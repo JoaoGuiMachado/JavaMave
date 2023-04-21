@@ -19,16 +19,14 @@ public class AlunoServicoImpl implements IAlunoService{
     private AlunoRepository repository; 
 
     @Override
-    public me.dio.academia.digital.controller.Aluno create(AlunoForm form) {
+    public me.dio.academia.digital.entity.Aluno create(AlunoForm form) {
         Aluno aluno = new Aluno();
         aluno.setNome(form.getNome());
         aluno.setCpf(form.getCpf());
         aluno.setBairro(form.getBairro());
         aluno.setDataDeNascimento(form.getDataDeNascimento());
 
-        returnrepository.save(aluno);
-        
-        return null;
+        return repository.save(aluno);
     }
 
     @Override
@@ -38,7 +36,7 @@ public class AlunoServicoImpl implements IAlunoService{
 
     @Override
     public List<Aluno> getAll() {
-        return repository.findALL();
+        return repository.findAll();
     }
 
     @Override
@@ -49,6 +47,12 @@ public class AlunoServicoImpl implements IAlunoService{
     @Override
     public void delete(Long id) {
        
+    }
+
+    public org.hibernate.mapping.List getAllAvaliacaoFisicaId(Long id) {
+        Aluno aluno = repository.findById(id).get();
+
+        return aluno.getAvaliacoes();
     }
 
 }

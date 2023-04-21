@@ -1,3 +1,4 @@
+server.port: 8090
 
 Spring:
   datasource:
@@ -11,4 +12,9 @@ Spring:
     properties:
       hibernate.format_sql: true
 
+logging:
+  level:
+    org:
+      hibernate:
+        tipe: trace
 
